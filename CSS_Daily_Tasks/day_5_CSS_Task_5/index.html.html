@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevProfile | Portfolio</title>
+
+    <style>
+        /* =========================
+           RESET & GLOBAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #172033;
+        }
+
+        .logo span {
+            color: #635bff;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 600;
+            color: #64748b;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #635bff;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(
+                135deg,
+                #eef2ff,
+                #ffffff
+            );
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .small-title {
+            color: #635bff;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #635bff;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            color: #64748b;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #635bff;
+            color: #ffffff;
+        }
+
+        .primary-btn:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+        }
+
+        .secondary-btn:hover {
+            border-color: #635bff;
+            color: #635bff;
+        }
+
+
+        /* =========================
+           PROFILE CARD
+        ========================= */
+
+        .profile-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+        }
+
+        .profile-icon {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #eef2ff;
+            color: #635bff;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .profile-card h2 {
+            margin-bottom: 8px;
+        }
+
+        .profile-card p {
+            color: #64748b;
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading p {
+            color: #635bff;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            font-size: 38px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-box {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .about-box h3 {
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .about-box p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .stat {
+            background: #eef2ff;
+            padding: 30px 15px;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        .stat h3 {
+            color: #635bff;
+            font-size: 30px;
+        }
+
+        .stat p {
+            color: #64748b;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-section {
+            background: #ffffff;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 30px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 15px;
+            background: #ffffff;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+        }
+
+        .skill-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background: #eef2ff;
+            color: #635bff;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        .project-image {
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eef2ff;
+            color: #635bff;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .project-two {
+            background: #ecfeff;
+            color: #0891b2;
+        }
+
+        .project-three {
+            background: #fff7ed;
+            color: #ea580c;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content span {
+            font-size: 12px;
+            color: #635bff;
+            font-weight: 800;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            margin: 8px 0;
+        }
+
+        .project-content p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #635bff;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-section {
+            padding: 90px 0;
+            background: #172033;
+            color: #ffffff;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 0.7fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-section h2 {
+            font-size: 42px;
+            line-height: 1.15;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .contact-section h2 span {
+            color: #a5b4fc;
+        }
+
+        .contact-section p:not(.small-title) {
+            color: #cbd5e1;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-info a {
+            padding: 15px 20px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .contact-info a:hover {
+            border-color: #a5b4fc;
+            color: #a5b4fc;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+        }
+
+        .footer-content {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero-content,
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                max-width: 450px;
+                margin: auto;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .nav-content {
+                flex-direction: column;
+                padding: 18px 0;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                text-align: center;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section h2 {
+                font-size: 32px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-content">
+
+            <div class="logo">
+                Dev<span>Profile</span>
+            </div>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <p class="small-title">
+                    WELCOME TO MY PORTFOLIO
+                </p>
+
+                <h1>
+                    Building Clean &
+                    <span>Modern Websites</span>
+                </h1>
+
+                <p class="hero-description">
+                    I am a passionate developer who enjoys creating
+                    responsive, user-friendly and visually appealing
+                    web applications.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="primary-btn">
+                        View Projects
+                    </a>
+
+                    <a href="#contact" class="secondary-btn">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-card">
+
+                <div class="profile-icon">
+                    &lt;/&gt;
+                </div>
+
+                <h2>
+                    Frontend Developer
+                </h2>
+
+                <p>
+                    HTML • CSS • JavaScript • React
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="section" id="about">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p>ABOUT ME</p>
+
+                <h2>
+                    Turning Ideas Into Websites
+                </h2>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <div class="about-box">
+
+                    <h3>
+                        Who I Am
+                    </h3>
+
+                    <p>
+                        I am an aspiring software developer interested
+                        in frontend development and modern web
+                        technologies.
+                    </p>
+
+                    <p>
+                        I enjoy converting ideas into simple,
+                        responsive and attractive digital experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="about-stats">
+
+                    <div class="stat">
+                        <h3>10+</h3>
+                        <p>Projects</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>5+</h3>
+                        <p>Technologies</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>Passion</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section class="section skills-section" id="skills">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p>MY SKILLS</p>
+
+                <h2>
+                    Technologies I Work With
+                </h2>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        HTML
+                    </div>
+
+                    <h3>
+                        HTML5
+                    </h3>
+
+                    <p>
+                        Semantic and structured web page development.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        CSS
+                    </div>
+
+                    <h3>
+                        CSS3
+                    </h3>
+
+                    <p>
+                        Responsive layouts, animations and modern UI.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        JS
+                    </div>
+
+                    <h3>
+                        JavaScript
+                    </h3>
+
+                    <p>
+                        Interactive and dynamic web experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        RE
+                    </div>
+
+                    <h3>
+                        React
+                    </h3>
+
+                    <p>
+                        Component-based frontend application development.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section class="section" id="projects">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p>MY WORK</p>
+
+                <h2>
+                    Featured Projects
+                </h2>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <!-- Project 1 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        PORTFOLIO
+                    </div>
+
+                    <div class="project-content">
+
+                        <span>
+                            HTML • CSS
+                        </span>
+
+                        <h3>
+                            Personal Portfolio
+                        </h3>
+
+                        <p>
+                            A clean and responsive portfolio website
+                            designed to showcase skills, projects
+                            and professional information.
+                        </p>
+
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 2 -->
+
+                <article class="project-card">
+
+                    <div class="project-image project-two">
+                        WEATHER
+                    </div>
+
+                    <div class="project-content">
+
+                        <span>
+                            HTML • CSS • JS
+                        </span>
+
+                        <h3>
+                            Weather App
+                        </h3>
+
+                        <p>
+                            A weather application concept that displays
+                            weather information using a clean interface.
+                        </p>
+
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 3 -->
+
+                <article class="project-card">
+
+                    <div class="project-image project-three">
+                        ICE CREAM
+                    </div>
+
+                    <div class="project-content">
+
+                        <span>
+                            HTML • CSS
+                        </span>
+
+                        <h3>
+                            Ice Cream Website
+                        </h3>
+
+                        <p>
+                            A modern food website concept featuring
+                            products, offers and a visually attractive
+                            landing page.
+                        </p>
+
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact-section" id="contact">
+
+        <div class="container contact-content">
+
+            <div>
+
+                <p class="small-title">
+                    GET IN TOUCH
+                </p>
+
+                <h2>
+                    Let's Build Something
+                    <span>Great Together.</span>
+                </h2>
+
+                <p>
+                    Have a project idea or an opportunity?
+                    Feel free to reach out.
+                </p>
+
+            </div>
+
+
+            <div class="contact-info">
+
+                <a href="mailto:yourmail@gmail.com">
+                    yourmail@gmail.com
+                </a>
+
+                <a href="#">
+                    LinkedIn Profile
+                </a>
+
+                <a href="#">
+                    GitHub Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <p>
+                © 2026 DevProfile. All Rights Reserved.
+            </p>
+
+            <p>
+                Built with HTML & CSS
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
