@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Praveen A | Pricing Plans</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+line-height:1.6
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto
+}
+
+header{
+text-align:center;
+padding:70px 0 45px
+}
+
+header h1{
+font-size:42px;
+margin-bottom:8px
+}
+
+header p{
+color:#64748b
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+padding-bottom:80px
+}
+
+.card{
+background:#fff;
+border:1px solid #e2e8f0;
+border-radius:15px;
+padding:35px 28px;
+position:relative;
+transition:.3s
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px #17203318
+}
+
+.card h2{
+font-size:25px;
+margin-bottom:15px
+}
+
+.card>p:not(.price){
+color:#64748b;
+margin-bottom:25px
+}
+
+.price{
+font-size:38px;
+font-weight:800;
+color:#635bff;
+margin-bottom:10px
+}
+
+.price span{
+font-size:14px;
+color:#64748b;
+font-weight:400
+}
+
+.card ul{
+list-style:none;
+border-top:1px solid #e2e8f0;
+padding-top:20px;
+margin-bottom:30px
+}
+
+.card li{
+margin:12px 0;
+color:#475569
+}
+
+.btn{
+display:block;
+text-align:center;
+background:#635bff;
+color:#fff;
+padding:12px;
+border-radius:8px;
+font-weight:700;
+text-decoration:none
+}
+
+.btn:hover{
+background:#4f46e5
+}
+
+.popular{
+border:2px solid #635bff
+}
+
+.tag{
+position:absolute;
+top:-14px;
+right:20px;
+background:#635bff;
+color:#fff;
+padding:5px 12px;
+border-radius:20px;
+font-size:11px;
+font-weight:800
+}
+
+footer{
+text-align:center;
+background:#172033;
+color:#cbd5e1;
+padding:22px;
+font-size:14px
+}
+
+@media(max-width:800px){
+.pricing{
+grid-template-columns:1fr;
+max-width:450px;
+margin:auto
+}
+
+header h1{
+font-size:34px
+}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Choose Your Plan</h1>
+<p>Simple and flexible pricing for everyone</p>
+</div>
+</header>
+<main class="container">
+<div class="pricing">
+<div class="card">
+<h2>Basic</h2>
+<p class="price">₹499<span>/month</span></p>
+<p>Perfect for beginners and personal projects.</p>
+<ul>
+<li>✓ 5 Projects</li>
+<li>✓ 5 GB Storage</li>
+<li>✓ Basic Support</li>
+<li>✓ Email Support</li>
+</ul>
+<a href="#" class="btn">Get Started</a>
+</div>
+<div class="card popular">
+<div class="tag">POPULAR</div>
+<h2>Pro</h2>
+<p class="price">₹999<span>/month</span></p>
+<p>Best choice for growing developers and teams.</p>
+<ul>
+<li>✓ 20 Projects</li>
+<li>✓ 50 GB Storage</li>
+<li>✓ Priority Support</li>
+<li>✓ Advanced Features</li>
+</ul>
+<a href="#" class="btn">Choose Pro</a>
+</div>
+<div class="card">
+<h2>Premium</h2>
+<p class="price">₹1499<span>/month</span></p>
+<p>For professionals who need more power.</p>
+<ul>
+<li>✓ Unlimited Projects</li>
+<li>✓ 200 GB Storage</li>
+<li>✓ 24/7 Support</li>
+<li>✓ Premium Features</li>
+</ul>
+<a href="#" class="btn">Go Premium</a>
+</div>
+</div>
+</main>
+<footer>
+<p>© 2026 Praveen A | Pricing Plan_Card</p>
+</footer>
+</body>
+</html>
+
